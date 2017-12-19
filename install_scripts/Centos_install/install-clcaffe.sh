@@ -64,7 +64,9 @@ CURDIR="$( cd "$( dirname "${BASH_SOURCE[0]}"  )" && pwd  )"
 export Atlas_ROOT_DIR=$CURDIR/atlas_384
 export ISAAC_HOME=$HOME/local
 
-cmake .. -DUSE_GREENTEA=ON -DUSE_CUDA=OFF -DUSE_INTEL_SPATIAL=ON -DBUILD_docs=0 -DUSE_ISAAC=ON -DViennaCL_INCLUDE_DIR=$HOME/local/include -DOPENCL_LIBRARIES=/opt/intel/opencl/libOpenCL.so -DOPENCL_INCLUDE_DIRS=/opt/intel/opencl/include
+cmake .. -DUSE_GREENTEA=ON -DUSE_CUDA=OFF -DUSE_INTEL_SPATIAL=ON -DBUILD_docs=0 -DUSE_ISAAC=ON -
+DViennaCL_INCLUDE_DIR=$HOME/local/include -DOPENCL_LIBRARIES=/opt/intel/opencl/libOpenCL.so -DOPENCL_INCLUDE_DIRS=/opt/intel/opencl/include
+# if error occurs in atlas, add option "-DBLAS=open"
 
 make all -j4
 make install
